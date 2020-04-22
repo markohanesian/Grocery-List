@@ -4,7 +4,6 @@ const moment = require(`moment-timezone`)
 
 // Import the model (burger.js) to use its database functions.
 const burger = require(`../../models/burger.js`);
-const confirmation = require(`../../models/confirmation.js`)
 
 // Create all our routes and set up logic within those routes where required.
 router.get(`/`, function (req, res) {
@@ -13,18 +12,7 @@ router.get(`/`, function (req, res) {
       i.date_eaten = moment(i.date_eaten).calendar()
       return i
     })
-    // console.log(moment.tz(dateStr).config)
-    confirmation.selectAll( results => {
-      let confirm
-      if(results[0].enabled === 0){
-        confirm = `disabled`
-      } else {
-        confirm = `enabled`
-      }
-      res.render(`index`, { burgers: data, confirmations: confirm, confirmationsAllCaps: confirm.toUpperCase() })
-    })
-  })
-})
+
 
 router.put(`/api/burgers/:id`, (req, res) => {
   const condition = `id = ` + req.params.id;

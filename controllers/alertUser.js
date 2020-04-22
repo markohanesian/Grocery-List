@@ -1,11 +1,11 @@
 const express = require(`express`);
-const routy = express.Router();
+const Router = express.Router();
 // const moment = require(`moment-timezone`)
 
 // Import the model (burger.js) to use its database functions.
 const alert = require(`../../models/alert.js`);
 
-routy.put(`/api/alerts/:id`, (req, res) => {
+router.put(`/api/alerts/:id`, (req, res) => {
     const condition = `id = ` + req.params.id;
     alert.updateOne(req.body, condition, result => {
         if (result.changedRows == 0) {
@@ -18,4 +18,4 @@ routy.put(`/api/alerts/:id`, (req, res) => {
 })
 
 // Export routes for server.js to use.
-module.exports = routy
+module.exports = router

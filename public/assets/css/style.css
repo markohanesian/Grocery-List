@@ -1,19 +1,14 @@
-li {
-  padding: 5px;
-  margin: 5px;
-  background: #faebd7;
-}
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
 
-.label {
-  font-weight: bold;
+.icon-block {
+  padding: 0 15px;
 }
-
-.create-update-form {
-  padding: 5px;
-  margin: 5px;
-  background: aqua;
-}
-
-.form-group {
-  margin-bottom: 5px;
+.icon-block .material-icons {
+	font-size: inherit;
 }

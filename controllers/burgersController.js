@@ -1,47 +1,61 @@
-const express = require(`express`);
-const router = express.Router();
-const moment = require(`moment-timezone`)
+var express = require("express");
 
-// Import the model (burger.js) to use its database functions.
-const burger = require(`../../models/burger.js`);
+var router = express.Router();
+
+// Import the model (cat.js) to use its database functions.
+var burger = require("../models/burger.js");
 
 // Create all our routes and set up logic within those routes where required.
-router.get(`/`, function (req, res) {
-  burger.selectAllByDate(`DESC`, data => {
-    data = data.map(i => {
-      i.date_eaten = moment(i.date_eaten).calendar()
-      return i
-    })
+router.get("/", function(req, res) {
+  burger.all(function(data) {
+    var hbsObject = {
+      burgers: data
+    };
+    console.log(hbsObject);
+    res.render("index", hbsObject);
+  });
+});
 
+router.post("/api/cats", function(req, res) {
+  burger.create([
+    "burger_name", "devoured"
+  ], [
+    req.body.name,false
+  ], function(result) {
+    // Send back the ID of the new quote
+    res.json({ id: result.insertId });
+  });
+});
 
-router.put(`/api/burgers/:id`, (req, res) => {
-  const condition = `id = ` + req.params.id;
+router.put("/api/cats/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
 
-  burger.updateOne(req.body, condition, result => {
+  console.log("condition", condition);
+
+  burger.update({
+    devoured: true
+  }, condition, function(result) {
     if (result.changedRows == 0) {
       // If no rows were changed, then the ID must not exist, so 404
-      return res.status(404).end()
+      return res.status(404).end();
     } else {
-      res.status(200).end()
+      res.status(200).end();
     }
-  })
-})
+  });
+});
 
+router.delete("/api/cats/:id", function(req, res) {
+  var condition = "id = " + req.params.id;
 
-router.post(`/api/burgers`, function (req, res) {
-  burger.insertOne([`burger_name`], [req.body.name], result => {
-    // Send back the ID of the new burger
-    res.json({ id: result.insertId })
-  })
-})
-
-router.delete(`/api/burgers/:id`, function (req, res) {
-  burger.delete(req.params.id, result => {
-    // Send back the ID of the new burger
-    res.json({ id: result.insertId })
-  })
-})
-
+  burger.delete(condition, function(result) {
+    if (result.affectedRows == 0) {
+      // If no rows were changed, then the ID must not exist, so 404
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
+    }
+  });
+});
 
 // Export routes for server.js to use.
-module.exports = router
+module.exports = router;

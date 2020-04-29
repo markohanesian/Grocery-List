@@ -27,7 +27,7 @@ $(function() {
 
     var newCat = {
       name: $("#ca").val().trim(),
-      devored: $("[name=sleepy]:checked").val().trim()
+      // devoured: $("[name=sleepy]:checked").val().trim()
     };
 
     // Send the POST request.
@@ -51,7 +51,7 @@ $(function() {
       type: "DELETE"
     }).then(
       function() {
-        console.log("deleted cat", id);
+        console.log("deleted burger", id);
         // Reload the page to get the updated list
         location.reload();
       }

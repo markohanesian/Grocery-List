@@ -1,7 +1,6 @@
 li {
   padding: 5px;
   margin: 5px;
-  background: #faebd7;
 }
 
 .label {
@@ -20,4 +19,9 @@ li {
 
 #radio {
   color: white !important;
+}
+
+body {
+  background-image: url("https://img.freepik.com/free-vector/hamburger_53876-25481.jpg?size=338&ext=jpg") !important;
+  background-repeat: repeat !important;
 }

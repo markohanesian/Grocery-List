@@ -26,4 +26,4 @@ Simply open the application, input the kind of burger you want and press the dev
 ## Badges
 
 ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-![GitHub release (https://img.shields.io/github/v/release/markohanesian/happy-nappers)
+![GitHub release](https://img.shields.io/github/v/release/markohanesian/happy-nappers)

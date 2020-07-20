@@ -29,4 +29,3 @@ Simply open the application, input the kind of burger you want and press the dev
 ![GitHub release](https://img.shields.io/github/v/release/markohanesian/Burger-Logger)
 ![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
 
-

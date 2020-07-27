@@ -15,7 +15,7 @@ Simply open the application, input the kind of burger you want and press the dev
 
 ## License
 
-[https://opensource.org/licenses/MIT]
+(https://opensource.org/licenses/MIT)
 
 
 ---

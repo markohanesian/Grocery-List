@@ -13,12 +13,9 @@ This application requires no installation, just a browser on your pc or mobile d
 
 Simply open the application, input the kind of burger you want and press the devour button. To clear your devoured burger list, click the "clear" button next to each burger you entered.
 
-
-## Credits
-
 ## License
 
-[https://choosealicense.com/]
+https://opensource.org/licenses/MIT]
 
 
 ---

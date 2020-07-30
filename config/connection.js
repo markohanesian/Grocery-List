@@ -11,7 +11,8 @@ if (process.env.JAWSDB_URL) {
         port: 3306,
         host: 'localhost',
         user: 'root',
-        password:process.env.LOCAL_PASSWORD,
+        // process.env.LOCAL_PASSWORD
+        password: 'marksql#15',
         database: 'burgers_db'
     })
 };

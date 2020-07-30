@@ -1,15 +1,22 @@
-<div class="alert alert-warning" role="alert">
-    <h1 class="display-4">Burger Logger</h1>
-    <p class="lead">Enter the type of burger you would like to eat below, devour, and track what you've eaten</p>
+<head>
+    {{#each css}}
+        <link rel="stylesheet" href="/css/{{this}}">
+    {{/each}}
+</head>
+<
+
+<div id="header">
+    <h1 class="display-4">Meal Planner</h1>
+    <p class="lead">Plan your meals and track what you've eaten today</p>
     <form class="create-form">
       <div class="form-group">
-        <label for="ca">Burger Name:</label>
+        <label for="ca">Food Item(s)</label>
         <input type="text" id="ca" name="name">
       </div>
       <div class="form-group">
-        <input type="radio" value="1" checked> Ready to devour!<br>
+        <input type="radio" value="1" checked>Ready<br>
       </div>
-      <button type="submit" class="btn btn-warning">Submit</button>
+      <button type="submit" class="btn btn-warning">Add</button>
     </form>
 </div>
 
@@ -17,28 +24,20 @@
 <div class="container">
   <div class="row">
     <div class="col-sm">
-      <div class="card" style="width: 18rem;">
-        <img src="https://img.freepik.com/free-vector/hamburger_53876-25481.jpg?size=338&ext=jpg" class="card-img-top"
-          alt="...">
-        <div class="card-body">
-          <h2>Burgers that are not devoured!</h2>
-          <p class="card-text">
-            <ul>
-              {{#each burgers}}
-              {{#unless devoured}}
-              {{> burgers/burger-block devoured=false}}
-              {{/unless}}
-              {{/each}}
-            </ul>
-          </p>
-        </div>
-      </div>
+      <h2>Today's Foods</h2>
+      <p class="card-text">
+        <ul>
+          {{#each burgers}}
+          {{#unless devoured}}
+          {{> burgers/burger-block devoured=false}}
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </p>
     </div>
     <div class="col-sm">
-      <div class="card" style="width: 18rem;">
-        <img src="https://i.imgur.com/Mn9ns4m.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h2>Burgers that are devoured!</h2>
+        
+          <h2>What I've eaten today</h2>
           <p class="card-text">
             <ul>
               {{#each burgers}}
@@ -48,8 +47,7 @@
               {{/each}}
             </ul>
           </p>
-        </div>
-      </div>
+    
     </div>
   </div>
 </div>

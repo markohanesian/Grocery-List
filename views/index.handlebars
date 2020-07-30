@@ -4,53 +4,76 @@
     {{/each}}
 </head>
 
-<div class="col-sm" id="header">
-    <h1 class="display-4">Meal Planner</h1>
-    <p class="lead">Plan your meals and track what you've eaten today</p>
-    <form class="create-form">
-      <div class="form-group">
-        <label for="ca">Food Item(s)</label>
-        <input type="text" id="ca" name="name">
+  <div class="container">
+    {{!-- hero image --}}
+    <div class="header-row" id="header-row" style="padding: 0px; overflow:hidden; height:100px;">
+            <!-- container-fluid is the same as container but spans a wider viewport, 
+        it still has padding though so you need to remove this either by adding 
+        another class with no padding or inline as I did below -->
+      <div class="container-fluid" style="padding: 0px;">
+          <div class="row"> 
+            <!-- You originally has it set up for two columns, remove the second 
+        column as it is unneeded and set the first to always span all 12 columns 
+        even when at its smallest (xs). Set the overflow to hidden so no matter 
+        the height of your image it will never show outside this div-->
+            <div class="col-xs-12"> 
+                <a class="navbar-brand logo" href="index.html">
+            <!-- place your image here -->
+                  <img src="/public/assets/images/food.jpg" alt="picture of food" style="width: 100%;">
+                </a> 
+            </div>     
+          </div>
       </div>
-      <div class="form-group">
-        <input type="radio" value="1" checked>Ready<br>
-      </div>
-      <button type="submit" class="btn btn-warning">Add</button>
-    </form>
-</div>
-
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      <h2>Today's Foods</h2>
-      <p class="card-text">
-        <ul>
-          {{#each burgers}}
-          {{#unless devoured}}
-          {{> burgers/burger-block devoured=false}}
-          {{/unless}}
-          {{/each}}
-        </ul>
-      </p>
     </div>
+    {{!-- hero image --}}
+    <div class="col-sm" id="header">
+        <h1 class="display-4">Meal Planner</h1>
+        <p class="lead">Plan your meals and track what you've eaten today</p>
+        <form class="create-form">
+          <div class="form-group">
+            <label for="ca">Food Item(s)</label>
+            <input type="text" id="ca" name="name">
+          </div>
+          <div class="form-group">
+            <input type="radio" value="1" checked>Ready<br>
+          </div>
+          <button type="submit" id="add-food" >Add</button>
+        </form>
+    </div>
+
+
     <div class="col-sm">
-        
-          <h2>What I've eaten today</h2>
+      <div class="row">
+        <div class="col-sm">
+          <h2>Today's Foods</h2>
           <p class="card-text">
             <ul>
               {{#each burgers}}
-              {{#if devoured}}
-              {{> burgers/burger-block devoured=true}}
-              {{/if}}
+              {{#unless devoured}}
+              {{> burgers/burger-block devoured=false}}
+              {{/unless}}
               {{/each}}
             </ul>
           </p>
-    
+        </div>
+        <div class="col-sm">
+            
+              <h2>What I've eaten today</h2>
+              <p class="card-text">
+                <ul>
+                  {{#each burgers}}
+                  {{#if devoured}}
+                  {{> burgers/burger-block devoured=true}}
+                  {{/if}}
+                  {{/each}}
+                </ul>
+              </p>
+        
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
-<nav class="navbar fixed-bottom navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">2018 Mark Sarkis Ohanesian</a>
-</nav>
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">2020 Mark Sarkis Ohanesian</a>
+    </nav>
+  </div>

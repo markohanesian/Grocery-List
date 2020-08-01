@@ -1,7 +1,13 @@
+<head>
+    {{#each css}}
+        <link rel="stylesheet" href="/css/{{this}}">
+    {{/each}}
+</head>
+
 <div class="alert alert-warning" role="alert">
 	{{burger_name}}
 </div>
 
-	<button class="change-sleep" data-id="{{this.id}}">Devour!</button>
-	<button class="delete-cat" data-id="{{this.id}}">Clear</button>
+	<button class="change-sleep" data-id="{{this.id}}">Eat</button>
+	<button class="delete-cat" data-id="{{this.id}}">X</button>
 

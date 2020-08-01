@@ -1,22 +1,14 @@
-# Burger Logger
+# Meal Planner
 
 ## Description 
+Meal planner is a simple web-based meal planning tool to help you plan your meals and track what you've eaten
 
-Burger logger is a simple app that allows you to choose the type of burger you want to eat and keep track of which burgers have been devoured or not.
-
-## Installation
-
-This application requires no installation, just a browser on your pc or mobile device
-
-
-## Usage 
-
-Simply open the application, input the kind of burger you want and press the devour button. To clear your devoured burger list, click the "clear" button next to each burger you entered.
+## Instructions 
+Simply enter then names of foods or meals and add them to your list, and click "eat" to track what you've eaten
 
 ## License
 
 * [MIT](https://opensource.org/licenses/MIT)
-
 
 ---
 

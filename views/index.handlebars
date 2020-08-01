@@ -5,54 +5,49 @@
 </head>
 
   <div class="container">
-   
     <div class="col-sm" id="header">
         <h1 class="display-4">Meal Planner</h1>
-        <p class="lead">Plan your meals and track what you've eaten today</p>
+        <p class="lead">Live a healthier lifestyle with this easy meal planner</p>
+        <p id="instructions">Get started by adding food or meals below. Click "eat" once you've eaten them to track what you've had today.</p>
         <form class="create-form">
           <div class="form-group">
-            <label for="ca">Enter a food or meal</label>
+            <label for="ca"></label>
             <input type="text" id="ca" name="name">
+            <button type="submit" id="add-food">Add</button>
+            <div class="form-group">
+              <input id="radio" type="radio" value="1" checked><br>
+            </div>
           </div>
-          <div class="form-group">
-            <input type="radio" value="1" checked>Ready<br>
-          </div>
-          <button type="submit" id="add-food">Add</button>
         </form>
     </div>
-
-
-    <div class="col-sm">
-      <div class="row">
-        <div class="col-sm">
-          <h2>Today's Foods</h2>
-          <p class="card-text">
-            <ul>
-              {{#each burgers}}
-              {{#unless devoured}}
-              {{> burgers/burger-block devoured=false}}
-              {{/unless}}
-              {{/each}}
-            </ul>
-          </p>
-        </div>
-        <div class="col-sm">
-            
-              <h2>What I've eaten today</h2>
-              <p class="card-text">
-                <ul>
-                  {{#each burgers}}
-                  {{#if devoured}}
-                  {{> burgers/burger-block devoured=true}}
-                  {{/if}}
-                  {{/each}}
-                </ul>
-              </p>
-        
-        </div>
+    <div class="container" id="today">
+      <div class="col-sm">
+        <h3>Today's Foods</h3>
+        <p class="card-text">
+          <ul>
+            {{#each burgers}}
+            {{#unless devoured}}
+            {{> burgers/burger-block devoured=false}}
+            {{/unless}}
+            {{/each}}
+          </ul>
+        </p>
       </div>
     </div>
-
+    <div class="container" id="eaten">
+      <div class="col-sm">
+        <h3>What I've eaten today</h3>
+        <p class="card-text">
+          <ul>
+            {{#each burgers}}
+            {{#if devoured}}
+            {{> burgers/burger-block devoured=true}}
+            {{/if}}
+            {{/each}}
+          </ul>
+        </p>
+      </div>
+    </div>
     <nav class="navbar navbar-dark bg-dark">
       <a class="navbar-brand" href="#">2020 Mark Sarkis Ohanesian</a>
     </nav>

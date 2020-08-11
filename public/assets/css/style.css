@@ -1,6 +1,5 @@
 /* sections */
 #header {
-  margin-top: 50px;
   padding: 15px !important;
   background-color: #555b6e;
   display: flex;
@@ -19,9 +18,27 @@
   background-color: #ffd6ba;
 }
 
-.form-group, create-form, ul {
+.col-sm {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.meal-item {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  padding: 5px;
+  color: white;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.form-group, create-form, ul {
+  display: flex;
+  flex-direction: column;
   padding: 10px;
 }
 
@@ -49,7 +66,9 @@ h2 {
 /* buttons */
 #add-food {
   background-color: #555b6e; 
-  border: none;
+  border: solid;
+  border-width: 1px;
+  margin-top: 5px;
   color: white;
   padding: 5px 20px;
   text-decoration: none;
@@ -59,31 +78,36 @@ h2 {
 }
 
 .change-sleep {
-  flex-direction: 'row';
-  justify-content: 'space-between';
+  display: flex;
+  flex-direction: 'column';
+  /* justify-content: 'space-between'; */
   background-color: #555b6e; 
   border: none;
   color: white;
-  padding: 15px 32px;
+  padding: 15px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
 }
 
 .delete-cat {
+  display: flex;
   flex-direction: 'row';
-  justify-content: 'space-between';
+  /* justify-content: 'space-between'; */
   background-color: red; /* Green */
   border: none;
   color: white;
-  padding: 15px 32px;
-  text-align: center;
+  padding: 15px;
+  margin-left: 10px;
   text-decoration: none;
-  display: inline-block;
   font-size: 16px;
 }
 
 body {
   background-color: white;
+}
+
+.container {
+  padding-left: 0px;
+  padding-right: 0px;
 }

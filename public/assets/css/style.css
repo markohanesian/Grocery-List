@@ -15,7 +15,7 @@
 
 #eaten {
   padding-top: 20px;
-  background-color: #ffd6ba;
+  background-color: #89b0ae;
 }
 
 .col-sm {
@@ -39,13 +39,12 @@
 .form-group, create-form, ul {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 0px;
 }
 
 /* Text */
 h1 {
   color: white !important;
-  padding: 10px;
 }
 
 h2 {
@@ -55,6 +54,10 @@ h2 {
 .lead {
   text-decoration: none;
   color: white;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-bottom: 40px;
+
 }
 
 #instructions {
@@ -77,14 +80,17 @@ h2 {
   place-content: center;
 }
 
+.meal-buttons {
+  display: flex;
+  flex-direction: 'row';
+}
+
 .change-sleep {
   display: flex;
   flex-direction: 'column';
   /* justify-content: 'space-between'; */
-  background-color: #555b6e; 
   border: none;
-  color: white;
-  padding: 15px;
+  padding: 10px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
@@ -93,11 +99,11 @@ h2 {
 .delete-cat {
   display: flex;
   flex-direction: 'row';
+  background-color: transparent;
   /* justify-content: 'space-between'; */
-  background-color: red; /* Green */
   border: none;
-  color: white;
-  padding: 15px;
+  color: red;
+  padding: 10px;
   margin-left: 10px;
   text-decoration: none;
   font-size: 16px;

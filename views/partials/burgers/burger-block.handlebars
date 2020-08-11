@@ -1,13 +1,13 @@
 <head>
     {{#each css}}
-        <link rel="stylesheet" href="/css/{{this}}">
+    <link rel="stylesheet" href="/css/{{this}}">
     {{/each}}
 </head>
 
 <div class="meal-item">
-	{{burger_name}}
-    <button class="change-sleep" data-id="{{this.id}}">Eat</button>
-	<button class="delete-cat" data-id="{{this.id}}">X</button>
+    {{burger_name}}
+    <div class="meal-buttons">
+        <button class="change-sleep" data-id="{{this.id}}">Eat</button>
+        <button class="delete-cat" data-id="{{this.id}}">X</button>
+    </div>
 </div>
-
-	

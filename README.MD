@@ -34,6 +34,6 @@ Simply enter then names of foods or meals and add them to your list, and click "
 ## Badges
 
 ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
-![GitHub release](https://img.shields.io/github/v/release/markohanesian/Burger-Logger)
+![GitHub release](https://img.shields.io/github/v/release/markohanesian/Meal-Planner)
 ![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)
 

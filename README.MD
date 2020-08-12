@@ -1,28 +1,27 @@
-# Meal Planner
+# Grocery List
+![Grocery List Demo](public/assets/gifs/Grocery-List.webm)
 
 ## Description 
-Meal planner is a simple web-based meal planning tool to help you plan your meals and track what you've eaten
+Grocery List is a minimal grocery list app that allows you to add foods and delete them easily to keep track of your shopping
 
 ## User Story
-I want to live a healthy lifestyle, and part of that is planning my food intake and being able to track what I eat. I need a web application that allows me to quickly add my meal plan and add/delete foods I consume as I go about my day
+I want to be able to keep a list of my groceries that I can quickly and easily update when I need to add items or delete existing ones I've added
 
 ## Instructions 
-Simply enter then names of foods or meals and add them to your list, and click "eat" to track what you've eaten
+Simply enter then names of foods or meals and add them to your list. Click the trashcan icon to remove them from the list.
 
 ## Links
-* [Web](https://github.com/markohanesian/docket)
 * [Github](https://github.com/markohanesian/)
 
 ## Built With
 * Node
 * Express
 * MySql
-* Bootstrap
+* AJAX
 * Handlebars
+* CSS
 
 ## Planned Features/Outstanding Issues
-* Update Layout
-* Add health tracking features
 * Add profile and authentication
 
 ## License

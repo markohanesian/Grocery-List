@@ -1,5 +1,5 @@
 # Grocery List
-![Grocery List Demo](public/assets/gifs/Grocery-List.webm)
+![Grocery List Demo](public/assets/gifs/Grocery-List.gif)
 
 ## Description 
 Grocery List is a minimal grocery list app that allows you to add foods and delete them easily to keep track of your shopping

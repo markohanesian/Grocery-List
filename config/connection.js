@@ -13,7 +13,7 @@ if (process.env.JAWSDB_URL) {
         user: 'root',
         // process.env.LOCAL_PASSWORD
         password: 'marksql#15',
-        database: 'burgers_db'
+        database: 'meals_db'
     })
 };
 // Export connection for our ORM to use.

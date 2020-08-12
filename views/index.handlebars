@@ -25,10 +25,8 @@
         <h3>Today's Foods</h3>
         <p class="card-text">
           <ul>
-            {{#each burgers}}
-            {{#unless devoured}}
-            {{> burgers/burger-block devoured=false}}
-            {{/unless}}
+            {{#each meals}}
+            {{> meals/meal-container}}
             {{/each}}
           </ul>
         </p>
@@ -39,10 +37,8 @@
         <h3>What I've eaten today</h3>
         <p class="card-text">
           <ul>
-            {{#each burgers}}
-            {{#if devoured}}
-            {{> burgers/burger-block devoured=true}}
-            {{/if}}
+            {{#each meals}}
+            {{> meals/meal-container}}
             {{/each}}
           </ul>
         </p>

@@ -1,7 +1,8 @@
 /* sections */
 #header {
   padding: 15px !important;
-  background-color: #555b6e;
+  background-color: #28590C;
+  color: #FBFCEB;
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -10,12 +11,16 @@
 
 #today {
   padding-top: 20px;
-  background-color: #89b0ae;
+  background-color: #97BE11;
 }
 
 #eaten {
   padding-top: 20px;
-  background-color: #89b0ae;
+  background-color: #97BE11;
+}
+
+#footer {
+  background-color: #28590C !important;
 }
 
 .col-sm {
@@ -61,18 +66,18 @@ h2 {
 }
 
 #instructions {
-  color: white;
+  color: #FBFCEB;
   padding-right: 40px;
   padding-left: 40px;
 }
 
 /* buttons */
 #add-food {
-  background-color: #555b6e; 
+  background-color: #FBFCEB; 
   border: solid;
   border-width: 1px;
   margin-top: 5px;
-  color: white;
+  color: #28590C;
   padding: 5px 20px;
   text-decoration: none;
   font-size: 26px;
@@ -86,27 +91,30 @@ h2 {
 }
 
 .change-sleep {
-  display: flex;
-  flex-direction: 'column';
-  /* justify-content: 'space-between'; */
+  display: grid;
+  place-items: center;
   border: none;
   padding: 10px;
   text-align: center;
   text-decoration: none;
   font-size: 16px;
+  border-radius: 25px;
 }
 
 .delete-cat {
-  display: flex;
-  flex-direction: 'row';
+  display: grid;
+  place-items: center;
   background-color: transparent;
   /* justify-content: 'space-between'; */
-  border: none;
+  border: solid;
+  border-color: red;
   color: red;
   padding: 10px;
-  margin-left: 10px;
+  margin-left: 40px;
+  margin-right: 10px;
   text-decoration: none;
   font-size: 16px;
+  border-radius: 35px;
 }
 
 body {

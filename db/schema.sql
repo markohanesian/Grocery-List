@@ -1,4 +1,4 @@
-### Schema
+-- ### Schema
 
 CREATE DATABASE meals_db;
 USE meals_db;

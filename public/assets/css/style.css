@@ -90,7 +90,7 @@ h2 {
   flex-direction: 'row';
 }
 
-.change-sleep {
+.eat-meal {
   display: grid;
   place-items: center;
   border: none;
@@ -101,7 +101,7 @@ h2 {
   border-radius: 25px;
 }
 
-.delete-cat {
+.delete-meal {
   display: grid;
   place-items: center;
   background-color: transparent;

@@ -5,9 +5,13 @@
 </head>
 
 <div class="meal-item">
-    {{meal_name}}
+    <div id="meal-name-box">
+        {{meal_name}}
+    </div>
     <div class="meal-buttons">
-        <button class="eat-meal" data-id="{{this.id}}">Eat</button>
-        <button class="delete-meal" data-id="{{this.id}}"> X </button>
+        {{!-- <button class="eat-meal" data-id="{{this.id}}">Eat</button> --}}
+        <button class="delete-meal" data-id="{{this.id}}">
+            <i class="fas fa-trash"></i>
+        </button>
     </div>
 </div>

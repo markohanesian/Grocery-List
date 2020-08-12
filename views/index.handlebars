@@ -6,8 +6,8 @@
 
   <div class="container">
     <div class="col-sm" id="header">
-        <h1 class="display-4">Meal Planner</h1>
-        <p class="lead">Live a healthier lifestyle</p>
+        <h1 class="display-4">Grocery List</h1>
+        {{!-- <p class="lead">Live a healthier lifestyle</p> --}}
         <p id="instructions">Get started by adding food or meals below. Click "eat" once you've eaten them to track what you've had today.</p>
         <form class="create-form">
           <div class="form-group">
@@ -22,7 +22,7 @@
     </div>
     <div class="container" id="today">
       <div class="col-sm">
-        <h3>Today's Foods</h3>
+        {{!-- <h3>Today's Foods</h3> --}}
         <p class="card-text">
           <ul>
             {{#each meals}}
@@ -32,19 +32,22 @@
         </p>
       </div>
     </div>
-    <div class="container" id="eaten">
+    {{!-- <div class="container" id="eaten">
       <div class="col-sm">
         <h3>What I've eaten today</h3>
         <p class="card-text">
           <ul>
-            {{!-- {{#each meals}}
+            {{#each meals}}
+            {{#if eaten}}
             {{> meals/meal-container}}
-            {{/each}} --}}
+            {{/if}}
+            {{/each}} 
           </ul>
         </p>
       </div>
-    </div>
+    </div> --}}
     <nav class="navbar navbar-dark bg-dark" id="footer">
-      <a class="navbar-brand" href="#">2020 Mark Sarkis Ohanesian</a>
+      <a href="#">2020 Mark Ohanesian</a>
+      <a href="https://github.com/markohanesian">GitHub</a>
     </nav>
   </div>

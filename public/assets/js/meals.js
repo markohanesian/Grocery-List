@@ -11,7 +11,7 @@ $(function() {
     // Send the PUT request.
     $.ajax("/api/meals/" + id, {
       type: "PUT",
-      // data: newSleepState
+      data: this.data
     }).then(
       function() {
         console.log("user ate meal");

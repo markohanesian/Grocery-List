@@ -11,7 +11,7 @@
   "dependencies": {
     "check-node-version": "^4.0.3",
     "dotenv": "^8.2.0",
-    "express": "^4.16.3",
+    "express": "^4.17.1",
     "express-handlebars": "^3.0.0",
     "mysql": "^2.16.0"
   },

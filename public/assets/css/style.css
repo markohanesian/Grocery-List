@@ -79,9 +79,10 @@ h2 {
 }
 
 #instructions {
+  text-align: center;
   color: #FBFCEB;
-  padding-right: 40px;
-  padding-left: 40px;
+  padding-right: 60px;
+  padding-left: 60px;
 }
 
 /* buttons */

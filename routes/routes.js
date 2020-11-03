@@ -1,6 +1,5 @@
-var express = require("express");
+const router = require('express').Router();
 
-var router = express.Router();
 
 // Import the model (meal.js) to use its database functions.
 var meal = require("../models/meal.js");
@@ -39,6 +38,23 @@ router.delete("/api/meals/:id", function(req, res) {
       res.status(200).end();
     }
   });
+});
+
+// auth login
+router.get('/login', (req, res) => {
+  res.render('login');
+});
+
+// auth logout
+router.get('/logout', (req, res) => {
+  // handle with passport
+  res.send('logging out')
+})
+
+// auth with Google
+router.get('/google', (req, res) => {
+  // handle with passport
+  res.send('logging in with Google')
 });
 
 // Export routes for server.js to use.

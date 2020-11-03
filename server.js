@@ -18,7 +18,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 // Import routes and give the server access to them.
-var routes = require("./routes/routes.js");
+const routes = require('./routes/routes.js');
 
 // create home route
 app.get('/', (req, res) => {

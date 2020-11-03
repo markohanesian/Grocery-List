@@ -1,5 +1,5 @@
 const router = require('express').Router();
-
+const passport = require('passport');
 
 // Import the model (meal.js) to use its database functions.
 var meal = require("../models/meal.js");
@@ -52,10 +52,11 @@ router.get('/logout', (req, res) => {
 })
 
 // auth with Google
-router.get('/google', (req, res) => {
-  // handle with passport
-  res.send('logging in with Google')
-});
+router.get('/google', passport.authenticate('google', {
+    // https://developers.google.com/identity/sign-in/web/quick-migration-guide
+    scope: ['profile']
+  }
+));
 
 // Export routes for server.js to use.
 module.exports = router;

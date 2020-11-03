@@ -20,7 +20,13 @@ app.set("view engine", "handlebars");
 // Import routes and give the server access to them.
 var routes = require("./routes/routes.js");
 
-app.use(routes);
+// create home route
+app.get('/', (req, res) => {
+  res.render('index');
+});
+
+// setup routes with condition that routes must have authorization
+app.use('/auth', routes);
 
 // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {

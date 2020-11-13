@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const passport = require('passport');
+const { google } = require('../config/middleware/keys.js');
 
 // Import the model (meal.js) to use its database functions.
 var meal = require("../models/meal.js");
@@ -59,7 +60,7 @@ router.get('/google', passport.authenticate('google', {
 ));
 
 // callback route for Google to redirect to after login
-router.get('/google/redirect', (req, res) => {
+router.get('/google/redirect', passport.authenticate('google'), (req, res) => {
   res.send('you reached the callback URI')
 })
 

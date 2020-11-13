@@ -7,6 +7,6 @@ module.exports = {
         clientSecret: "OVerzm1yARB0kwbKHGJhVQqP"
     },
     mongodb: {
-        dbURI: 'mongo "mongodb+srv://grocery-list.juek7.mongodb.net/<grocery-list>" --username new_user',
+        dbURI: 'mongodb+srv://new_user:Tarplayer%6@grocery-list.juek7.mongodb.net/<dbname>?retryWrites=true&w=majority',
     }
 };

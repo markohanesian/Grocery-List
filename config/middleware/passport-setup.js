@@ -4,6 +4,7 @@ const GoogleStrategy = require('passport-google-oauth20');
 const keys = require('./keys');
 // importing user model
 const user = require('../../models/user.model');
+const User = require('../../models/user.model');
 
 passport.use(
     new GoogleStrategy({
@@ -15,5 +16,10 @@ passport.use(
         // passport callback function
         console.log('passport callback function fired');
         console.log(profile)
+        // function to make add user to db using mongoose 
+        new User({
+            username: profile.displayName,
+            googleID: profile.id
+        }).save()
     })
 )

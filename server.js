@@ -2,7 +2,8 @@ const express = require("express");
 const PORT = process.env.PORT || 8080;
 const app = express();
 const passportSetup = require('./config/middleware/passport-setup');
-
+const mongoose = require('mongoose');
+const keys = require('./config/middleware/keys')
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static("public"));
 
@@ -15,6 +16,11 @@ const exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+// connect to mongodb
+mongoose.connect(keys.mongodb.dbURI, () => {
+  console.log('connected to mongodb');
+})
 
 // Import routes and give the server access to them.
 const routes = require('./routes/routes.js');

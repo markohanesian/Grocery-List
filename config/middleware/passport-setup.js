@@ -13,13 +13,22 @@ passport.use(
         clientID: keys.google.clientID,
         clientSecret: keys.google.clientSecret,
     }, (accessToken, refreshToken, profile, done) => {
-        // passport callback function
-        console.log('passport callback function fired');
-        console.log(profile)
+        // check if user already exists in our db
+        User.findOne({googleID: profile.id}).then((currentUser) => {
+            if(currentUser){
+                // already have the user
+                console.log('user is: ', currentUser)
+            } else {
+                // if not, create new user in our db
+                new User({
+                    username: profile.displayName,
+                    googleID: profile.id
+                }).save().then((newUser) => {
+                    console.log('new user created: ' + newUser)
+                })
+            }
+        })
         // function to make add user to db using mongoose 
-        new User({
-            username: profile.displayName,
-            googleID: profile.id
-        }).save()
+        
     })
 )

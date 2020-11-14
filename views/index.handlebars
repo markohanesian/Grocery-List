@@ -1,54 +1,85 @@
 <head>
-    {{#each css}}
-        <link rel="stylesheet" href="/css/{{this}}">
-    {{/each}}
+  {{#each css}}
+  <link rel="stylesheet" href="/css/{{this}}">
+  {{/each}}
 </head>
 
-  <div class="container">
-    <div class="col-sm" id="header">
-        <i class="fas fa-shopping-cart" style="font-size: 4rem; padding: 15px;"></i>
-        <h1 class="display-4">Grocery List</h1>
-        {{!-- <p class="lead">Live a healthier lifestyle</p> --}}
-        <p id="instructions">Get started by adding food or meals below. Delete items with <i class="fas fa-trash"></i></p>
-        <form class="create-form">
-          <div class="form-group">
-            <label for="ca"></label>
-            <input type="text" id="ca" name="name">
-            <button type="submit" id="add-food">Add</button>
-            {{!-- <div class="form-group">
-              <input id="radio" type="radio" value="1" checked><br>
-            </div> --}}
-          </div>
-        </form>
-    </div>
-    <div class="container" id="today">
-      <div class="col-sm">
-        {{!-- <h3>Today's Foods</h3> --}}
-        <p class="card-text">
-          <ul>
-            {{#each meals}}
-            {{> meals/meal-container}}
-            {{/each}}
-          </ul>
-        </p>
-      </div>
-    </div>
-    {{!-- <div class="container" id="eaten">
-      <div class="col-sm">
-        <h3>What I've eaten today</h3>
-        <p class="card-text">
-          <ul>
-            {{#each meals}}
-            {{#if eaten}}
-            {{> meals/meal-container}}
-            {{/if}}
-            {{/each}} 
-          </ul>
-        </p>
-      </div>
-    </div> --}}
-    <nav class="navbar navbar-dark bg-dark" id="footer">
-      <a href="https://markohanesian.github.io/markohanesian/">2020 Mark Ohanesian</a>
-      <a href="https://github.com/markohanesian">GitHub</a>
-    </nav>
+<div class="container">
+  <div class="col-sm" id="header">
+    <i class="fas fa-shopping-cart" style="font-size: 4rem; padding: 15px;"></i>
+    <h1 class="display-4">Grocery List</h1>
+    <p id="instructions">Get started by adding food or meals below. Check list items when complete, or remove with <i class="far fa-times-circle"></i></p>
   </div>
+  <div id="myDIV" class="header">
+    <input type="text" id="myInput" placeholder="Title...">
+    <span onclick="newElement()" class="addBtn">Add</span>
+  </div>
+
+  <ul id="myUL">
+    <li>Eggs</li>
+    <li>Milk</li>
+    <li>Cheese</li>
+    <li class="checked">Flour</li>
+  </ul>
+  <nav class="navbar navbar-dark bg-dark" id="footer">
+    <a href="https://markohanesian.github.io/markohanesian/">2020 Mark Ohanesian</a>
+    <a href="https://github.com/markohanesian">GitHub</a>
+  </nav>
+</div>
+<script>
+  // Create a "close" button and append it to each list item
+  var myNodelist = document.getElementsByTagName("LI");
+  var i;
+  for (i = 0; i < myNodelist.length; i++) {
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    myNodelist[i].appendChild(span);
+  }
+
+  // Click on a close button to hide the current list item
+  var close = document.getElementsByClassName("close");
+  var i;
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function () {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+
+  // Add a "checked" symbol when clicking on a list item
+  var list = document.querySelector('ul');
+  list.addEventListener('click', function (ev) {
+    if (ev.target.tagName === 'LI') {
+      ev.target.classList.toggle('checked');
+    }
+  }, false);
+
+  // Create a new list item when clicking on the "Add" button
+  function newElement() {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("myInput").value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue === '') {
+      alert("You must write something!");
+    } else {
+      document.getElementById("myUL").appendChild(li);
+    }
+    document.getElementById("myInput").value = "";
+
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    li.appendChild(span);
+
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function () {
+        var div = this.parentElement;
+        div.style.display = "none";
+      }
+    }
+  }
+</script>

@@ -3,7 +3,6 @@ const GoogleStrategy = require('passport-google-oauth20');
 // keys file import
 const keys = require('./keys');
 // importing user model
-const user = require('../../models/user.model');
 const User = require('../../models/user.model');
 
 passport.use(

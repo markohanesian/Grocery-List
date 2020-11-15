@@ -1,2 +1,2 @@
 node_modules/
-.env
+.envkeys.js $ git rm --cached keys.js rm keys.js $ git commit -m Start ignoring keys.js

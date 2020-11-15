@@ -10,3 +10,4 @@ module.exports = {
         dbURI: 'mongodb+srv://new_user:Tarplayer%6@grocery-list.juek7.mongodb.net/<dbname>?retryWrites=true&w=majority',
     }
 };
+
